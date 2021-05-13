@@ -7,8 +7,10 @@ import java.awt.event.MouseListener;
 
 public class Start extends JPanel implements MouseListener {
 
-
-public Start() {
+linki linki;
+public Start(linki linki) {
+    this.linki = linki;
+    setSize(1280,760);
     addMouseListener(this);
 }
 
@@ -26,18 +28,28 @@ public Start() {
        // System.out.println(e.getPoint());
 
 
-         if (e.getX()>=470 && e.getX()<=745 && e.getY()>=410 && e.getY()<=500){
+         if (e.getX()>=470 && e.getX()<=745 && e.getY()>=410 && e.getY()<=500) {
+
              System.out.println("Start");
+
+             linki.Bstart = false;
+             linki.Bselect = true;
          }
-         if (e.getX()>=160 && e.getX()<=370 && e.getY()>=465 && e.getY()<=535){
-            System.out.println("Select Player");
-         }
+
          if (e.getX()>=468 && e.getX()<=747 && e.getY()>=540 && e.getY()<=611){
-            System.out.println("Quit");
+
+             System.out.println("Quit");
+
+             System.exit(0);
+
          }
-         if (e.getX()>=860 && e.getX()<=1070 && e.getY()>=465 && e.getY()<=540){
+         /*if (e.getX()>=160 && e.getX()<=370 && e.getY()>=465 && e.getY()<=535){
+            System.out.println("Select Player");
+         }*/
+
+         /*if (e.getX()>=860 && e.getX()<=1070 && e.getY()>=465 && e.getY()<=540){
             System.out.println("How To Play");
-         }
+         }*/
     }
 
     @Override
