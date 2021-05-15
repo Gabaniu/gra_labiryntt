@@ -11,6 +11,11 @@ public class game {
     public boolean Bhow;
     public boolean Bsplayer;
 
+    public boolean select1A;
+    public boolean select1B;
+    public boolean select2A;
+    public boolean select2B;
+
 
     public JFrame okno;
     public game(){
