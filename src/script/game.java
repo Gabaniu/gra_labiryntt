@@ -3,17 +3,22 @@ package script;
 import javax.swing.*;
 import java.awt.*;
 
-public class linki {
+public class game {
 
 
-    public boolean Bstart = true;
+    public boolean Bstart;
     public boolean Bselect;
+    public boolean Bhow;
+    public boolean Bsplayer;
+
 
     public JFrame okno;
-    public linki(){
+    public game(){
 
         Start Start = new Start(this);
+        how_to_play how = new how_to_play(this);
         Select_Level Select = new Select_Level(this);
+        Select_Player splayer = new Select_Player(this);
 
         okno = new JFrame();
 
@@ -23,9 +28,13 @@ public class linki {
 
         okno.add(Start);
         okno.add(Select);
+        okno.add(how);
+        okno.add(splayer);
 
         okno.getContentPane().getComponent(0).setVisible(true);
         okno.getContentPane().getComponent(1).setVisible(false);
+        okno.getContentPane().getComponent(2).setVisible(false);
+        okno.getContentPane().getComponent(3).setVisible(false);
 
         okno.pack();
         okno.setTitle("Maze Runner");
@@ -33,7 +42,12 @@ public class linki {
         okno.setBounds(100, 100, 1280, 760);
         okno.setLocationRelativeTo(null);
         okno.setResizable(false);
+
         this.Bstart = true;
+        this.Bhow = false;
+        this.Bselect = false;
+        this.Bsplayer = false;
+
         okno.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         okno.setVisible(true);
 
