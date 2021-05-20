@@ -32,6 +32,18 @@ public class watek extends Thread{
         if (game.Bsplayer == true) {
             game.okno.getContentPane().getComponent(3).setVisible(true);
         }
+        if (game.Blvl1 == false) {
+            game.okno.getContentPane().getComponent(4).setVisible(false);
+        }
+        if (game.Blvl1 == true) {
+            game.okno.getContentPane().getComponent(4).setVisible(true);
+        }
+        if (game.Blvl2 == false) {
+            game.okno.getContentPane().getComponent(5).setVisible(false);
+        }
+        if (game.Blvl2 == true) {
+            game.okno.getContentPane().getComponent(5).setVisible(true);
+        }
     }
 
     public void run(){

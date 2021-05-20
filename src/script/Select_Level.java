@@ -32,9 +32,13 @@ import java.awt.event.MouseListener;
             }
             if (e.getX() >= 280 && e.getX() <= 380 && e.getY() >= 240 && e.getY() <= 340) {
                 System.out.println("1_level");
+                game.Blvl1 = true;
+                game.Bselect = false;
             }
             if (e.getX() >= 580 && e.getX() <= 680 && e.getY() >= 240 && e.getY() <= 340) {
                 System.out.println("2_level");
+                game.Blvl2 = true;
+                game.Bselect = false;
             }
             if (e.getX() >= 880 && e.getX() <= 980 && e.getY() >= 240 && e.getY() <= 340) {
                 System.out.println("3_level");

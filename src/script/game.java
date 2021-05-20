@@ -11,6 +11,10 @@ public class game {
     public boolean Bhow;
     public boolean Bsplayer;
 
+    public boolean Blvl1;
+    public boolean Blvl2;
+
+    public boolean basic;
     public boolean select1A;
     public boolean select1B;
     public boolean select2A;
@@ -34,6 +38,8 @@ public class game {
         how_to_play how = new how_to_play(this);
         Select_Level Select = new Select_Level(this);
         Select_Player splayer = new Select_Player(this);
+        lvl1 l1 = new lvl1(this);
+        lvl2 l2 = new lvl2(this);
 
         okno = new JFrame();
 
@@ -45,11 +51,15 @@ public class game {
         okno.add(Select);
         okno.add(how);
         okno.add(splayer);
+        okno.add(l1);
+        okno.add(l2);
 
         okno.getContentPane().getComponent(0).setVisible(true);
         okno.getContentPane().getComponent(1).setVisible(false);
         okno.getContentPane().getComponent(2).setVisible(false);
         okno.getContentPane().getComponent(3).setVisible(false);
+        okno.getContentPane().getComponent(4).setVisible(false);
+        okno.getContentPane().getComponent(5).setVisible(false);
 
         okno.pack();
         okno.setTitle("Maze Runner");
@@ -62,6 +72,8 @@ public class game {
         this.Bhow = false;
         this.Bselect = false;
         this.Bsplayer = false;
+        this.Blvl1 = false;
+        this.Blvl2 = false;
 
         okno.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         okno.setVisible(true);

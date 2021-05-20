@@ -17,6 +17,7 @@ public class Select_Player extends JPanel implements MouseListener {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+
         ImageIcon im = new ImageIcon("src/png/select-player.png");
         ImageIcon im1 = new ImageIcon("src/png/select-1A.png");
         ImageIcon im2 = new ImageIcon("src/png/select-1B.png");
@@ -34,7 +35,7 @@ public class Select_Player extends JPanel implements MouseListener {
         ImageIcon o4 = new ImageIcon("src/png/m_o.png");
 
 
-        g.drawImage(im.getImage(), -30, -30, 1280, 760, null);
+        game.basic = true;
 
         game.ch_n = true;
         game.ch_th = true;
@@ -46,7 +47,9 @@ public class Select_Player extends JPanel implements MouseListener {
         game.te_o = true;
         game.m_o = true;
 
-
+        if(game.basic == true){
+            g.drawImage(im.getImage(), -30, -30, 1280, 760, null);
+        }
         if(game.select1A == true){
             g.drawImage(im1.getImage(), -30, -30, 1280, 760, null);
         }
@@ -96,6 +99,7 @@ public class Select_Player extends JPanel implements MouseListener {
         System.out.println(e.getPoint());
         if (e.getX() >= 60 && e.getX() <= 240 && e.getY() >= 630 && e.getY() <= 690) {
             System.out.println("Back");
+
             game.Bstart = true;
             game.Bsplayer = false;
         }

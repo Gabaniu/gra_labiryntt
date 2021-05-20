@@ -46,12 +46,12 @@ public class move extends JPanel  implements KeyListener {
             System.out.println("left");
         }
 
-        if (kier == 2) {
+       /* if (kier == 2) {
             g.drawImage(imgRes, 0, 15, 0, 0, 28, 0, 0 + (i * 15), 28 + (i * 28), null);
             System.out.println("jump?");
         }
 
-       /* if (kier == 3){
+        if (kier == 3){
             g.drawImage(imgRes, 80 + x, 0, 0 + x, 88, 0, 0 + (i * 88), 80, 88 + (i * 88), null);
             System.out.println("crouch?");
         }*/
