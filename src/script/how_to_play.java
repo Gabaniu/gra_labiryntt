@@ -31,9 +31,6 @@ import java.awt.event.MouseListener;
 
                 game.Bstart = true;
                 game.Bhow = false;
-
-
-
             }
 
             if (e.getX() >= 870 && e.getX() <= 1210 && e.getY() >= 590 && e.getY() <= 705) {

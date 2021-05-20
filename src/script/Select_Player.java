@@ -22,7 +22,30 @@ public class Select_Player extends JPanel implements MouseListener {
         ImageIcon im2 = new ImageIcon("src/png/select-1B.png");
         ImageIcon im3 = new ImageIcon("src/png/select-2A.png");
         ImageIcon im4 = new ImageIcon("src/png/select-2B.png");
+
+        ImageIcon im5 = new ImageIcon("src/png/ch.newt.png");
+        ImageIcon im6 = new ImageIcon("src/png/ch_th.png");
+        ImageIcon im7 = new ImageIcon("src/png/ch_mi.png");
+        ImageIcon im8 = new ImageIcon("src/png/ch_t.png");
+
+        ImageIcon o1 = new ImageIcon("src/png/n_o.png");
+        ImageIcon o2 = new ImageIcon("src/png/tho_o.png");
+        ImageIcon o3 = new ImageIcon("src/png/te_o.png");
+        ImageIcon o4 = new ImageIcon("src/png/m_o.png");
+
+
         g.drawImage(im.getImage(), -30, -30, 1280, 760, null);
+
+        game.ch_n = true;
+        game.ch_th = true;
+        game.ch_mi = true;
+        game.ch_t = true;
+
+        game.n_o = true;
+        game.tho_o = true;
+        game.te_o = true;
+        game.m_o = true;
+
 
         if(game.select1A == true){
             g.drawImage(im1.getImage(), -30, -30, 1280, 760, null);
@@ -37,7 +60,35 @@ public class Select_Player extends JPanel implements MouseListener {
             g.drawImage(im4.getImage(), -30, -30, 1280, 760, null);
         }
 
+
+        if(game.ch_n == true){
+            g.drawImage(im5.getImage(), 200, 200, 90, 148, null);
+        }
+        if(game.ch_th == true) {
+            g.drawImage(im6.getImage(), 620, 200, 90, 156, null);
+        }
+        if(game.ch_mi == true) {
+            g.drawImage(im7.getImage(), 200, 375, 90, 162, null);
+        }
+        if(game.ch_t == true) {
+            g.drawImage(im8.getImage(), 620, 375, 90, 162, null);
+        }
+
+
+        if(game.n_o == true) {
+            g.drawImage(o1.getImage(), 250, 190, 380, 180, null);
+        }
+        if(game.tho_o == true) {
+            g.drawImage(o2.getImage(), 570, 190, 530, 230, null);
+        }
+        if(game.te_o == true) {
+            g.drawImage(o3.getImage(), 570, 365, 530, 230, null);
+        }
+        if(game.m_o == true) {
+            g.drawImage(o4.getImage(), 180, 365, 530, 230, null);
+        }
     }
+
 
 
     @Override
@@ -118,4 +169,3 @@ public class Select_Player extends JPanel implements MouseListener {
 
     }
 }
-

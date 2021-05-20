@@ -16,6 +16,16 @@ public class game {
     public boolean select2A;
     public boolean select2B;
 
+    public boolean ch_n;
+    public boolean ch_th;
+    public boolean ch_mi;
+    public boolean ch_t;
+
+    public boolean n_o;
+    public boolean tho_o;
+    public boolean te_o;
+    public boolean m_o;
+
 
     public JFrame okno;
     public game(){
