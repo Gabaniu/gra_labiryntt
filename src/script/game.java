@@ -10,6 +10,9 @@ public class game {
     public boolean Bselect;
     public boolean Bhow;
     public boolean Bsplayer;
+    public boolean Bsettings;
+
+    public boolean move;
 
     public boolean Blvl1;
     public boolean Blvl2;
@@ -38,6 +41,10 @@ public class game {
         how_to_play how = new how_to_play(this);
         Select_Level Select = new Select_Level(this);
         Select_Player splayer = new Select_Player(this);
+        Settings sett = new Settings(this);
+        //move mv = new move(this);
+
+
         lvl1 l1 = new lvl1(this);
         lvl2 l2 = new lvl2(this);
 
@@ -51,8 +58,12 @@ public class game {
         okno.add(Select);
         okno.add(how);
         okno.add(splayer);
+        okno.add(sett);
+
         okno.add(l1);
         okno.add(l2);
+
+        //okno.add(mv);
 
         okno.getContentPane().getComponent(0).setVisible(true);
         okno.getContentPane().getComponent(1).setVisible(false);
@@ -60,6 +71,8 @@ public class game {
         okno.getContentPane().getComponent(3).setVisible(false);
         okno.getContentPane().getComponent(4).setVisible(false);
         okno.getContentPane().getComponent(5).setVisible(false);
+        okno.getContentPane().getComponent(6).setVisible(false);
+        //okno.getContentPane().getComponent(7).setVisible(false);
 
         okno.pack();
         okno.setTitle("Maze Runner");
@@ -72,6 +85,9 @@ public class game {
         this.Bhow = false;
         this.Bselect = false;
         this.Bsplayer = false;
+
+        this.Bsettings = false;
+
         this.Blvl1 = false;
         this.Blvl2 = false;
 

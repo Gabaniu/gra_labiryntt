@@ -18,10 +18,13 @@ public class lvl2 extends JPanel implements KeyListener {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
+
         ImageIcon im = new ImageIcon("src/png/lvl2.png");
+        ImageIcon sett = new ImageIcon("src/png/sett.png");
 
 
         g.drawImage(im.getImage(), 0, 0, 1280, 760, null);
+        g.drawImage(sett.getImage(), 950, -15, 260, 100, null);
     }
 
     @Override
