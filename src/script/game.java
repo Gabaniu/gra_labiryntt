@@ -12,7 +12,11 @@ public class game {
     public boolean Bsplayer;
     public boolean Bsettings;
 
+    public boolean Bstrt;
+
     public boolean move;
+
+    public boolean timer;
 
     public boolean Blvl1;
     public boolean Blvl2;
@@ -22,6 +26,7 @@ public class game {
     public boolean select1B;
     public boolean select2A;
     public boolean select2B;
+
 
     public boolean ch_n;
     public boolean ch_th;
@@ -43,6 +48,8 @@ public class game {
         Select_Player splayer = new Select_Player(this);
         Settings sett = new Settings(this);
         //move mv = new move(this);
+        //Strt st = new Strt(this);
+        timer tim = new timer(this);
 
 
         lvl1 l1 = new lvl1(this);
@@ -60,6 +67,10 @@ public class game {
         okno.add(splayer);
         okno.add(sett);
 
+        okno.add(tim);
+
+        //okno.add(st);
+
         okno.add(l1);
         okno.add(l2);
 
@@ -72,7 +83,7 @@ public class game {
         okno.getContentPane().getComponent(4).setVisible(false);
         okno.getContentPane().getComponent(5).setVisible(false);
         okno.getContentPane().getComponent(6).setVisible(false);
-        //okno.getContentPane().getComponent(7).setVisible(false);
+        okno.getContentPane().getComponent(7).setVisible(false);
 
         okno.pack();
         okno.setTitle("Maze Runner");
@@ -87,6 +98,7 @@ public class game {
         this.Bsplayer = false;
 
         this.Bsettings = false;
+        this.Bstrt = false;
 
         this.Blvl1 = false;
         this.Blvl2 = false;
@@ -95,7 +107,9 @@ public class game {
         okno.setVisible(true);
 
         watek watek = new watek(this);
-        watek.run();
+        watek.start();
+
+
     }
 
 }

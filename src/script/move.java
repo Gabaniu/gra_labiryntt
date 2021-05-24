@@ -1,4 +1,4 @@
-/*package script;
+package script;
 
 import javax.swing.*;
 
@@ -57,14 +57,10 @@ public class move extends JPanel  implements KeyListener, MouseListener {
     @Override
     public void keyTyped(KeyEvent e) {
         System.out.println(e.getKeyCode());
-
-
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-
-
         if(i < 540)
             i+=108;
         else
@@ -79,13 +75,8 @@ public class move extends JPanel  implements KeyListener, MouseListener {
         if(e.getKeyCode()==38) {
             z = y;
             for(int k = 1; k<=5 ; k++) {
-                y += 3;
-                kier=2;
-                if(y<=z+15){
-                    for(int l = 5; l>=1; l--){
-                        y -=3;
-                    }
-                }
+                y -= 3;
+                kier = 2;
             }
         }
 
@@ -122,4 +113,4 @@ public class move extends JPanel  implements KeyListener, MouseListener {
     public void mouseExited(MouseEvent e) {
 
     }
-}*/
+}
