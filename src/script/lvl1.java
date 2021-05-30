@@ -17,7 +17,7 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
     game game;
     public lvl1 (game game){
         this.game = game;
-        setSize(1280,760);
+        setSize(1280 + 14, 960 + 14 + 23);
         addKeyListener(this);
         addMouseListener(this);
 
@@ -43,8 +43,8 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
         g.drawImage(sett.getImage(), 950, -15, 260, 100, null);
 */
 
-        g.drawImage(im1.getImage(), 0, 0, 1280, 760, null);
-        g.drawImage(sett.getImage(), 950, -15, 260, 100, null);
+        g.drawImage(im1.getImage(), 0, -40, 1280, 960, null);
+        g.drawImage(sett.getImage(), 950, -5, 260, 100, null);
 
 
     }

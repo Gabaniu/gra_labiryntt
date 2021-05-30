@@ -10,7 +10,7 @@ public class Settings extends JPanel implements MouseListener {
     game game;
     public Settings(game game) {
         this.game = game;
-        setSize(1280,760);
+        setSize(1280 + 14, 960 + 14 + 23);
         addMouseListener(this);
     }
 
@@ -24,7 +24,7 @@ public class Settings extends JPanel implements MouseListener {
 
         
         if(game.Blvl1 == true){
-            g.drawImage(im1.getImage(), 0, 0, 1280, 760, null);
+            g.drawImage(im1.getImage(), 0, 0, 1280, 960, null);
             g.drawImage(set.getImage(), 950, -15, 260, 100, null);
 
         }

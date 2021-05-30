@@ -59,7 +59,7 @@ public class game {
 
         ImageIcon im = new ImageIcon("src/png/logo.png");
 
-        okno.setPreferredSize(new Dimension(1280,760));
+        okno.setPreferredSize(new Dimension(1280,960));
 
         okno.add(Start);
         okno.add(Select);
@@ -88,7 +88,7 @@ public class game {
         okno.pack();
         okno.setTitle("Maze Runner");
         okno.setIconImage(im.getImage());
-        okno.setBounds(100, 100, 1280, 760);
+        okno.setBounds(100, 100, 1280 + 14, 960 + 14 + 23);
         okno.setLocationRelativeTo(null);
         okno.setResizable(false);
 

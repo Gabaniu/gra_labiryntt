@@ -13,7 +13,7 @@ public class move extends JPanel  implements KeyListener, MouseListener {
     game game;
     public move (game game){
         this.game = game;
-        setSize(1280,760);
+        setSize(1280 + 14, 960 + 14 + 23);
         addMouseListener(this);
     }
 

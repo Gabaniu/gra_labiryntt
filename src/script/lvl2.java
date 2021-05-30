@@ -10,7 +10,7 @@ public class lvl2 extends JPanel implements KeyListener {
     game game;
     public lvl2 (game game){
         this.game = game;
-        setSize(1280,760);
+        setSize(1280 + 14, 960 + 14 + 23);
         addKeyListener(this);
     }
 

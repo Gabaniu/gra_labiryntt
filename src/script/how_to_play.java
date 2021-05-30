@@ -10,30 +10,30 @@ import java.awt.event.MouseListener;
         game game;
         public how_to_play (game game){
             this.game = game;
-            setSize(1280,760);
+            setSize(1280 + 14, 480 + 14 + 23);
             addMouseListener(this);
         }
 
         @Override
         public void paintComponent(Graphics g){
             super.paintComponent(g);
-            ImageIcon ia = new ImageIcon("src/png/pixil-frame-0 (3).png");
-            g.drawImage(ia.getImage(),-30,-30,1280, 760, null);
+            ImageIcon ia = new ImageIcon("src/png/how_to_play.png");
+            g.drawImage(ia.getImage(),-10,-100,1280, 960, null);
         }
 
 
 
         @Override
         public void mouseClicked(MouseEvent e) {
-            System.out.println(e.getPoint());
-            if (e.getX() >= 20 && e.getX() <= 160 && e.getY() >= 645 && e.getY() <= 690) {
+            //System.out.println(e.getPoint());
+            if (e.getX() >= 40 && e.getX() <= 140 && e.getY() >= 750 && e.getY() <= 810) {
                 System.out.println("back");
 
                 game.Bstart = true;
                 game.Bhow = false;
             }
 
-            if (e.getX() >= 870 && e.getX() <= 1210 && e.getY() >= 590 && e.getY() <= 705) {
+            if (e.getX() >= 890 && e.getX() <= 1230 && e.getY() >= 685 && e.getY() <= 830) {
                 System.out.println("start");
 
                 game.Bselect = true;

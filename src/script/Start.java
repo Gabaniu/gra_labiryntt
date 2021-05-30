@@ -10,7 +10,7 @@ public class Start extends JPanel implements MouseListener {
 game game;
 public Start(game game) {
     this.game = game;
-    setSize(1280,760);
+    setSize(1280 + 14, 960 + 14 + 23);
     addMouseListener(this);
 }
 
@@ -19,7 +19,7 @@ public Start(game game) {
 
         super.paintComponent(g);
         ImageIcon ii = new ImageIcon("src/png/start.png");
-        g.drawImage(ii.getImage(), 0, 0, 1280, 760, null);
+        g.drawImage(ii.getImage(), 0, 0, 1280, 960, null);
 
     }
 
@@ -28,7 +28,7 @@ public Start(game game) {
         //System.out.println(e.getPoint());
 
 
-         if (e.getX()>=470 && e.getX()<=745 && e.getY()>=410 && e.getY()<=500) {
+         if (e.getX()>=470 && e.getX()<=745 && e.getY()>=520 && e.getY()<=630) {
 
              System.out.println("Start");
 
@@ -38,20 +38,20 @@ public Start(game game) {
 
          }
 
-         if (e.getX()>=468 && e.getX()<=747 && e.getY()>=540 && e.getY()<=611){
+         if (e.getX()>=468 && e.getX()<=747 && e.getY()>=680 && e.getY()<=770){
 
              System.out.println("Quit");
 
              System.exit(0);
 
          }
-         if (e.getX()>=160 && e.getX()<=370 && e.getY()>=465 && e.getY()<=535){
+         if (e.getX()>=160 && e.getX()<=370 && e.getY()>=585 && e.getY()<=675){
             System.out.println("Select Player");
             game.Bsplayer = true;
             game.Bstart = false;
          }
 
-         if (e.getX()>=860 && e.getX()<=1070 && e.getY()>=465 && e.getY()<=540){
+         if (e.getX()>=860 && e.getX()<=1070 && e.getY()>=590 && e.getY()<=680){
             System.out.println("How To Play");
 
              game.Bhow = true;
