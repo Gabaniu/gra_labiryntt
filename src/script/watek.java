@@ -44,17 +44,23 @@ public class watek extends Thread{
         if (game.timer == true) {
             game.okno.getContentPane().getComponent(5).setVisible(true);
         }
-        if (game.Blvl1 == false) {
+        if (game.strt == false) {
             game.okno.getContentPane().getComponent(6).setVisible(false);
         }
-        if (game.Blvl1 == true) {
+        if (game.strt == true) {
             game.okno.getContentPane().getComponent(6).setVisible(true);
         }
-        if (game.Blvl2 == false) {
+        if (game.Blvl1 == false) {
             game.okno.getContentPane().getComponent(7).setVisible(false);
         }
-        if (game.Blvl2 == true) {
+        if (game.Blvl1 == true) {
             game.okno.getContentPane().getComponent(7).setVisible(true);
+        }
+        if (game.Blvl2 == false) {
+            game.okno.getContentPane().getComponent(8).setVisible(false);
+        }
+        if (game.Blvl2 == true) {
+            game.okno.getContentPane().getComponent(8).setVisible(true);
         }
     }
 

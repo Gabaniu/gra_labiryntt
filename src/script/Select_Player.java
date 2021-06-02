@@ -8,9 +8,10 @@ import java.awt.event.MouseListener;
 public class Select_Player extends JPanel implements MouseListener {
 
     game game;
-    public Select_Player (game game) {
+
+    public Select_Player(game game) {
         this.game = game;
-        setSize(1280 + 14, 960 + 14 + 23);
+        setSize(1280, 760);
         addMouseListener(this);
     }
 
@@ -47,70 +48,68 @@ public class Select_Player extends JPanel implements MouseListener {
         game.te_o = true;
         game.m_o = true;
 
-        if(game.basic == true){
-            g.drawImage(im.getImage(), -10, -100, 1280, 960, null);
+        if (game.basic == true) {
+            g.drawImage(im.getImage(), 0, 0, 1280, 760, null);
         }
-        if(game.select1A == true){
-            g.drawImage(im1.getImage(), -10, -100, 1280, 960, null);
+        if (game.select1A == true) {
+            g.drawImage(im1.getImage(), 0, 0, 1280, 760, null);
         }
-        if(game.select1B == true){
-            g.drawImage(im2.getImage(), -10, -100, 1280, 960, null);
+        if (game.select1B == true) {
+            g.drawImage(im2.getImage(), 0, 0, 1280, 760, null);
         }
-        if(game.select2A == true){
-            g.drawImage(im3.getImage(), -10, -100, 1280, 960, null);
+        if (game.select2A == true) {
+            g.drawImage(im3.getImage(), 0, 0, 1280, 760, null);
         }
-        if(game.select2B == true){
-            g.drawImage(im4.getImage(), -10, -100, 1280, 960, null);
-        }
-
-
-        if(game.ch_n == true){
-            g.drawImage(im5.getImage(), 220, 200, 90, 148, null);
-        }
-        if(game.ch_th == true) {
-            g.drawImage(im6.getImage(), 640, 200, 90, 156, null);
-        }
-        if(game.ch_mi == true) {
-            g.drawImage(im7.getImage(), 220, 430, 90, 162, null);
-        }
-        if(game.ch_t == true) {
-            g.drawImage(im8.getImage(), 640, 430, 90, 162, null);
+        if (game.select2B == true) {
+            g.drawImage(im4.getImage(), 0, 0, 1280, 760, null);
         }
 
 
-        if(game.n_o == true) {
-            g.drawImage(o1.getImage(), 250, 200, 380, 180, null);
+        if (game.ch_n == true) {
+            g.drawImage(im5.getImage(), 230, 230, 90, 148, null);
         }
-        if(game.tho_o == true) {
-            g.drawImage(o2.getImage(), 600, 190, 530, 230, null);
+        if (game.ch_th == true) {
+            g.drawImage(im6.getImage(), 640, 230, 90, 156, null);
         }
-        if(game.te_o == true) {
-            g.drawImage(o3.getImage(), 570, 420, 530, 230, null);
+        if (game.ch_mi == true) {
+            g.drawImage(im7.getImage(), 230, 410, 90, 162, null);
         }
-        if(game.m_o == true) {
-            g.drawImage(o4.getImage(), 180, 420, 530, 230, null);
+        if (game.ch_t == true) {
+            g.drawImage(im8.getImage(), 640, 410, 90, 162, null);
+        }
+
+
+        if (game.n_o == true) {
+            g.drawImage(o1.getImage(), 250, 220, 380, 180, null);
+        }
+        if (game.tho_o == true) {
+            g.drawImage(o2.getImage(), 600, 220, 530, 230, null);
+        }
+        if (game.te_o == true) {
+            g.drawImage(o3.getImage(), 570, 400, 530, 230, null);
+        }
+        if (game.m_o == true) {
+            g.drawImage(o4.getImage(), 180, 400, 530, 230, null);
         }
     }
-
-
 
     @Override
     public void mouseClicked(MouseEvent e) {
         //System.out.println(e.getPoint());
-        if (e.getX() >= 80 && e.getX() <= 260 && e.getY() >= 740 && e.getY() <= 815) {
+        if (e.getX() >= 90 && e.getX() <= 275 && e.getY() >= 665 && e.getY() <= 728) {
             System.out.println("Back");
 
             game.Bstart = true;
             game.Bsplayer = false;
         }
-        if (e.getX() >= 870 && e.getX() <= 1180 && e.getY() >= 735 && e.getY() <= 825) {
+        if (e.getX() >= 880 && e.getX() <= 1192 && e.getY() >= 660 && e.getY() <= 734) {
             System.out.println("confirm");
             game.Bselect = true;
             game.Bsplayer = false;
         }
 
 
-        if (e.getX() >= 210 && e.getX() <= 620 && e.getY() >= 190 && e.getY() <= 394) {
+        if (e.getX() >= 228 && e.getX() <= 634 && e.getY() >= 220 && e.getY() <= 390) {
             System.out.println("1 player");
 
             game.select1A = true;
@@ -120,7 +119,7 @@ public class Select_Player extends JPanel implements MouseListener {
 
             repaint();
         }
-        if (e.getX() >= 630 && e.getX() <= 1040 && e.getY() >= 180 && e.getY() <= 395) {
+        if (e.getX() >= 643 && e.getX() <= 1050 && e.getY() >= 220 && e.getY() <= 390) {
             System.out.println("2 player");
 
             game.select1B = true;
@@ -130,7 +129,7 @@ public class Select_Player extends JPanel implements MouseListener {
 
             repaint();
         }
-        if (e.getX() >= 215 && e.getX() <= 625 && e.getY() >= 400 && e.getY() <= 625) {
+        if (e.getX() >= 228 && e.getX() <= 633 && e.getY() >= 397 && e.getY() <= 572) {
             System.out.println("3 player");
 
             game.select2A = true;
@@ -140,7 +139,7 @@ public class Select_Player extends JPanel implements MouseListener {
 
             repaint();
         }
-        if (e.getX() >= 635 && e.getX() <= 1045 && e.getY() >= 400 && e.getY() <= 625) {
+        if (e.getX() >= 643 && e.getX() <= 1049 && e.getY() >= 397 && e.getY() <= 572) {
             System.out.println("4 player");
 
             game.select2B = true;
@@ -151,7 +150,6 @@ public class Select_Player extends JPanel implements MouseListener {
             repaint();
         }
     }
-
 
     @Override
     public void mousePressed(MouseEvent e) {

@@ -10,7 +10,7 @@ import java.awt.event.MouseListener;
         game game;
         public how_to_play (game game){
             this.game = game;
-            setSize(1280 + 14, 480 + 14 + 23);
+            setSize(1280 + 14, 760);
             addMouseListener(this);
         }
 
@@ -18,7 +18,7 @@ import java.awt.event.MouseListener;
         public void paintComponent(Graphics g){
             super.paintComponent(g);
             ImageIcon ia = new ImageIcon("src/png/how_to_play.png");
-            g.drawImage(ia.getImage(),-10,-100,1280, 960, null);
+            g.drawImage(ia.getImage(),-10,-100,1280, 760, null);
         }
 
 

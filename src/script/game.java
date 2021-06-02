@@ -38,6 +38,10 @@ public class game {
     public boolean te_o;
     public boolean m_o;
 
+    public boolean strt;
+
+    public int s = 0;
+
 
     public JFrame okno;
     public game(){
@@ -48,7 +52,7 @@ public class game {
         Select_Player splayer = new Select_Player(this);
         Settings sett = new Settings(this);
         //move mv = new move(this);
-        //Strt st = new Strt(this);
+        Strt st = new Strt(this);
         timer tim = new timer(this);
 
 
@@ -59,7 +63,7 @@ public class game {
 
         ImageIcon im = new ImageIcon("src/png/logo.png");
 
-        okno.setPreferredSize(new Dimension(1280,960));
+        okno.setPreferredSize(new Dimension(1280,760));
 
         okno.add(Start);
         okno.add(Select);
@@ -69,7 +73,7 @@ public class game {
 
         okno.add(tim);
 
-        //okno.add(st);
+        okno.add(st);
 
         okno.add(l1);
         okno.add(l2);
@@ -84,6 +88,10 @@ public class game {
         okno.getContentPane().getComponent(5).setVisible(false);
         okno.getContentPane().getComponent(6).setVisible(false);
         okno.getContentPane().getComponent(7).setVisible(false);
+        okno.getContentPane().getComponent(8).setVisible(false);
+
+
+        okno.addKeyListener(l1);
 
         okno.pack();
         okno.setTitle("Maze Runner");

@@ -5,83 +5,85 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-    public class Select_Level extends JPanel implements MouseListener {
+public class Select_Level extends JPanel implements MouseListener {
 
-        game game;
-        public Select_Level(game game) {
-            this.game = game;
-            setSize(1280 + 14, 960 + 14 + 23);
-            addMouseListener(this);
+    game game;
+
+    public Select_Level(game game) {
+        this.game = game;
+        setSize(1280, 760);
+        addMouseListener(this);
+    }
+
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        ImageIcon im = new ImageIcon("src/png/select_level.png");
+        g.drawImage(im.getImage(), 0, 0, 1280, 760, null);
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        //System.out.println(e.getPoint());
+        if (e.getX() >= 47 && e.getX() <= 191 && e.getY() >= 636 && e.getY() <= 684) {
+            System.out.println("Back");
+            game.Bstart = true;
+            game.Bselect = false;
         }
-
-        @Override
-        public void paintComponent(Graphics g) {
-            super.paintComponent(g);
-            ImageIcon im = new ImageIcon("src/png/select_level.png");
-            g.drawImage(im.getImage(), 0, -60, 1280, 960, null);
+        if (e.getX() >= 283 && e.getX() <= 385 && e.getY() >= 240 && e.getY() <= 341) {
+            System.out.println("1_level");
+            //game.Blvl1 = true;
+            game.strt = true;
+            game.s = 1;
+            //game.timer = true;
+            //game.win = false;
+            game.Bselect = false;
         }
-
-
-        @Override
-        public void mouseClicked(MouseEvent e) {
-            //System.out.println(e.getPoint());
-            if (e.getX() >= 50 && e.getX() <= 185 && e.getY() >= 745 && e.getY() <= 800) {
-                System.out.println("Back");
-                game.Bstart = true;
-                game.Bselect = false;
-            }
-            if (e.getX() >= 280 && e.getX() <= 380 && e.getY() >= 245 && e.getY() <= 365) {
-                System.out.println("1_level");
-                game.Blvl1 = true;
-                game.timer = true;
-                game.Bselect = false;
-            }
-            if (e.getX() >= 580 && e.getX() <= 680 && e.getY() >= 245 && e.getY() <= 365) {
-                System.out.println("2_level");
-                game.Blvl2 = true;
-                game.Bselect = false;
-            }
-            if (e.getX() >= 880 && e.getX() <= 980 && e.getY() >= 245 && e.getY() <= 365) {
-                System.out.println("3_level");
-            }
-            if (e.getX() >= 280 && e.getX() <= 380 && e.getY() >= 440 && e.getY() <= 560) {
-                System.out.println("4_level");
-            }
-            if (e.getX() >= 580 && e.getX() <= 680 && e.getY() >= 440 && e.getY() <= 560) {
-                System.out.println("5_level");
-            }
-            if (e.getX() >= 880 && e.getX() <= 980 && e.getY() >= 440 && e.getY() <= 560) {
-                System.out.println("6_level");
-            }
-            if (e.getX() >= 280 && e.getX() <= 380 && e.getY() >= 645 && e.getY() <= 765) {
-                System.out.println("7_level");
-            }
-            if (e.getX() >= 580 && e.getX() <= 680 && e.getY() >= 645 && e.getY() <= 765) {
-                System.out.println("8_level");
-            }
-            if (e.getX() >= 880 && e.getX() <= 980 && e.getY() >= 645 && e.getY() <= 765) {
-                System.out.println("9_level");
-            }
+        if (e.getX() >= 572 && e.getX() <= 687 && e.getY() >= 240 && e.getY() <= 342) {
+            System.out.println("2_level");
+            game.Blvl2 = true;
+            game.Bselect = false;
         }
-
-        @Override
-        public void mousePressed(MouseEvent e) {
-
+        if (e.getX() >= 875 && e.getX() <= 977 && e.getY() >= 239 && e.getY() <= 341) {
+            System.out.println("3_level");
         }
-
-        @Override
-        public void mouseReleased(MouseEvent e) {
-
+        if (e.getX() >= 280 && e.getX() <= 385 && e.getY() >= 398 && e.getY() <= 500) {
+            System.out.println("4_level");
         }
-
-        @Override
-        public void mouseEntered(MouseEvent e) {
-
+        if (e.getX() >= 573 && e.getX() <= 687 && e.getY() >= 400 && e.getY() <= 500) {
+            System.out.println("5_level");
         }
-
-        @Override
-        public void mouseExited(MouseEvent e) {
-
+        if (e.getX() >= 875 && e.getX() <= 975 && e.getY() >= 400 && e.getY() <= 500) {
+            System.out.println("6_level");
+        }
+        if (e.getX() >= 282 && e.getX() <= 386 && e.getY() >= 556 && e.getY() <= 658) {
+            System.out.println("7_level");
+        }
+        if (e.getX() >= 572 && e.getX() <= 687 && e.getY() >= 556 && e.getY() <= 657) {
+            System.out.println("8_level");
+        }
+        if (e.getX() >= 876 && e.getX() <= 977 && e.getY() >= 555 && e.getY() <= 658) {
+            System.out.println("9_level");
         }
     }
 
+    @Override
+    public void mousePressed(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
+    }
+}
