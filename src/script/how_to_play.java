@@ -18,7 +18,7 @@ import java.awt.event.MouseListener;
         public void paintComponent(Graphics g){
             super.paintComponent(g);
             ImageIcon ia = new ImageIcon("src/png/how_to_play.png");
-            g.drawImage(ia.getImage(),-10,-100,1280, 760, null);
+            g.drawImage(ia.getImage(),0,0,1280, 760, null);
         }
 
 
@@ -26,14 +26,14 @@ import java.awt.event.MouseListener;
         @Override
         public void mouseClicked(MouseEvent e) {
             //System.out.println(e.getPoint());
-            if (e.getX() >= 40 && e.getX() <= 140 && e.getY() >= 750 && e.getY() <= 810) {
+            if (e.getX() >= 50 && e.getX() <= 190 && e.getY() >= 675 && e.getY() <= 720) {
                 System.out.println("back");
 
                 game.Bstart = true;
                 game.Bhow = false;
             }
 
-            if (e.getX() >= 890 && e.getX() <= 1230 && e.getY() >= 685 && e.getY() <= 830) {
+            if (e.getX() >= 900 && e.getX() <= 1240 && e.getY() >= 625 && e.getY() <= 735) {
                 System.out.println("start");
 
                 game.Bselect = true;

@@ -112,6 +112,7 @@ public class Select_Player extends JPanel implements MouseListener {
         if (e.getX() >= 228 && e.getX() <= 634 && e.getY() >= 220 && e.getY() <= 390) {
             System.out.println("1 player");
 
+            game.s = 1;
             game.select1A = true;
             game.select1B = false;
             game.select2A = false;
@@ -122,6 +123,7 @@ public class Select_Player extends JPanel implements MouseListener {
         if (e.getX() >= 643 && e.getX() <= 1050 && e.getY() >= 220 && e.getY() <= 390) {
             System.out.println("2 player");
 
+            game.s = 2;
             game.select1B = true;
             game.select1A = false;
             game.select2A = false;

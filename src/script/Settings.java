@@ -53,7 +53,10 @@ public class Settings extends JPanel implements MouseListener {
 
         if (e.getX() >= 570 && e.getX() <= 680 && e.getY() >= 260 && e.getY() <= 270) {
             System.out.println("restart");
-            game.Blvl1 = true;
+            if(game.s == 1) {
+                game.strt = true;
+                game.Blvl1 = false;
+            }
             game.Bsettings = false;
         }
         if (e.getX() >= 545 && e.getX() <= 730 && e.getY() >= 325 && e.getY() <= 340) {

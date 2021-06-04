@@ -40,8 +40,13 @@ public class game {
 
     public boolean strt;
 
+    public boolean xy = false;
+
     public int s = 0;
 
+    public int fx = 0;
+    public int fy = 0;
+    public int fk = 0;
 
     public JFrame okno;
     public game(){
@@ -96,7 +101,7 @@ public class game {
         okno.pack();
         okno.setTitle("Maze Runner");
         okno.setIconImage(im.getImage());
-        okno.setBounds(100, 100, 1280 + 14, 960 + 14 + 23);
+        okno.setBounds(100, 100, 1280 + 14, 760 + 14 + 23);
         okno.setLocationRelativeTo(null);
         okno.setResizable(false);
 

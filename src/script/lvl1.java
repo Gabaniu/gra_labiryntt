@@ -18,8 +18,7 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
     String j;
     //public JLabel jl = new JLabel();
 
-    boolean win;
-    boolean move;
+    boolean jumpp = false;
 
 
 
@@ -36,9 +35,11 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
         jl.setForeground(Color.black);
         jl.setVisible(true);*/
 
+
     }
 
     public int[] plansza = {
+
             1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
             1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
             1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 1, 1,
@@ -66,42 +67,69 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
 
     };
 
-    /*public void ustawienia{
-        for(int h = 0; h < 768; h++){
-            if(plansza[i] == 2){
-                plansza[k] = plansza[i];
-            }
-        }
-    }*/
 
 
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
+        /*if(game.xy == true){
+            x = game.fx;
+            y = game.fy;
+            k = game.fk;
+        }*/
 
         ImageIcon im1 = new ImageIcon("src/png/1lvl.png");
         ImageIcon sett = new ImageIcon("src/png/sett.png");
-        ImageIcon run = new ImageIcon("src/png/newtv6.png");
-
-       // plansza[k] = plansza[8];
 
         g.drawImage(im1.getImage(),0,0,1280,760,null);
         g.drawImage(sett.getImage(),950,-15,260,100,null);
-        //g.drawImage(run.getImage(), 80+x,0+y,110+x,y+54,0,i*108,60,(i*108)+108,null);
 
-        if(kier == 0){
-            g.drawImage(run.getImage(), 80+x,0+y,110+x,y+54,0,i*108,60,(i*108)+108,null);
+        if(game.s == 1) {
+            ImageIcon run = new ImageIcon("src/png/newtv6.png");
+            ImageIcon jump = new ImageIcon("src/png/n-jump.png");
+
+            if(kier == 0){
+                g.drawImage(run.getImage(), 80+x,0+y,110+x,y+54,0,i*108,60,(i*108)+108,null);
+            }
+            if(kier == 1) {
+                g.drawImage(run.getImage(), 110 + x, 0+y, 80 + x, y+54, 0,i*108,60,(i*108)+108, null);
+            }
+            if(kier==2){
+                g.drawImage(jump.getImage(), 80 + x, 0+y, 110 + x, y+54, 0,i*108,60,(i*108)+108, null);
+            }
         }
-        /*if(kier == 1) {
-            g.drawImage(run.getImage(), 110 + x, 0+y, 80 + x, y+54, 0, i - 108, 60, 0 + i, null);
-        }*/
-        /*if(kier==2){
-            g.drawImage(jump.getImage(), 80 + x, 0+y, 110 + x, y+54, 0, i - 108, 57, 0 + i, null);
+        if(game.s == 2) {
+            ImageIcon run = new ImageIcon("src/png/thomas.png");
+
+            if(kier == 0){
+                g.drawImage(run.getImage(), 80+x,0+y,110+x,y+54,0,i*108,60,(i*108)+108,null);
+            }
+            if(kier == 1) {
+                g.drawImage(run.getImage(), 110 + x, 0+y, 80 + x, y+54, 0,i*108,60,(i*108)+108, null);
+            }
+            /*if(kier==2){
+                g.drawImage(jump.getImage(), 80 + x, 0+y, 110 + x, y+54, 0,i*108,60,(i*108)+108, null);
+            }*/
         }
-        if(kier==3){
-            g.drawImage(crouch.getImage(), 80 + x, 0+y, 110 + x, y+54, 0, i - 108, 57, 0 + i, null);
+
+            //sprawdzanie czy jest pogloga na dole
+        /*while(game.strt == false) {
+            if (plansza[k + 32] == 0) {
+                for (int k = 1; k <= 10; k++) {
+                    y += 3;
+                    kier = 2;
+                }
+                k+=32;
+                jumpp = false;
+            }
+            try {
+                Thread.sleep(20);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }*/
+
     }
 
     @Override
@@ -115,12 +143,17 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
             i++;
         else
             i=0;
+        //right
         if(e.getKeyCode()==39) {
-            System.out.println("right");
             if(plansza[k+1] == 0){
-                x+=5;
-                kier=0;
-                k++;
+                for(int f = 0; f<1; f++){
+                    x+=5;
+                    kier=0;
+                    if(x%40 == 0){
+                        k++;
+                    }
+                }
+
                 //System.out.println("0");
             }
             if(plansza[k+1] == 1){
@@ -128,20 +161,51 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
             }
 
         }
-        if(e.getKeyCode()==38) {
-            System.out.println("left");
+        //left
+        if(e.getKeyCode()==37) {
+            if(plansza[k-1] == 0){
+                for(int f = 0; f<1; f++) {
+                    x-=5;
+                    kier=1;
+                    if(x%40 == 0){
+                        k--;
+                    }
+                }
+                //System.out.println("0");
+            }
+            if(plansza[k-1] == 1){
+                System.out.println("1");
+            }
             kier=1;
         }
-        if(e.getKeyCode()==37) {
-            System.out.println("jump");
-            kier=2;
+        //jump
+        if(e.getKeyCode()==38 && jumpp == false) {
+            if(plansza[k-32] == 0) {
+                jumpp = true;
+                for (int k = 1; k <= 10; k++) {
+                    y -= 3;
+                    kier = 2;
+                }
+                k-=32;
+            }
         }
         repaint();
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-
+        //jump
+        if(e.getKeyCode()==38) {
+            for (int k = 1; k <= 10; k++) {
+                y += 3;
+                kier = 2;
+            }
+            k+=32;
+            jumpp = false;
+            kier = 0;
+        }
+        repaint();
+        System.out.println(plansza[k]);
     }
 
     @Override
@@ -154,10 +218,11 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
         }
 
         if (e.getX() >= 945 && e.getX() <= 1210 && e.getY() >= 25 && e.getY() <= 58) {
-
             game.Bsettings = true;
-
             System.out.println("settings");
+            game.fx = 0;
+            game.fy = 645;
+            game.fk = 674;
         }
     }
 
