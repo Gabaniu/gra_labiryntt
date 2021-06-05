@@ -41,7 +41,9 @@ public class Select_Level extends JPanel implements MouseListener {
         }
         if (e.getX() >= 572 && e.getX() <= 687 && e.getY() >= 240 && e.getY() <= 342) {
             System.out.println("2_level");
-            game.Blvl2 = true;
+            //game.Blvl2 = true;
+            game.strt = true;
+            game.s = 2;
             game.Bselect = false;
         }
         if (e.getX() >= 875 && e.getX() <= 977 && e.getY() >= 239 && e.getY() <= 341) {

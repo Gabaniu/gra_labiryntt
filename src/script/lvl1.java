@@ -36,6 +36,7 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
         jl.setVisible(true);*/
 
 
+
     }
 
     public int[] plansza = {
@@ -68,16 +69,20 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
     };
 
 
+    public void Main(){
+        if(game.xy == true){
+            x =0;
+            y = 645;
+            k = 674;
+        }
+
+    }
 
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        /*if(game.xy == true){
-            x = game.fx;
-            y = game.fy;
-            k = game.fk;
-        }*/
+        Main();
 
         ImageIcon im1 = new ImageIcon("src/png/1lvl.png");
         ImageIcon sett = new ImageIcon("src/png/sett.png");
@@ -85,9 +90,14 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
         g.drawImage(im1.getImage(),0,0,1280,760,null);
         g.drawImage(sett.getImage(),950,-15,260,100,null);
 
+
+
         if(game.s == 1) {
             ImageIcon run = new ImageIcon("src/png/newtv6.png");
             ImageIcon jump = new ImageIcon("src/png/n-jump.png");
+
+            //g.drawImage(run.getImage(), 80+x,0+y,110+x,y+54,0,i*108,60,(i*108)+108,null);
+
 
             if(kier == 0){
                 g.drawImage(run.getImage(), 80+x,0+y,110+x,y+54,0,i*108,60,(i*108)+108,null);
@@ -102,6 +112,9 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
         if(game.s == 2) {
             ImageIcon run = new ImageIcon("src/png/thomas.png");
 
+            //g.drawImage(run.getImage(), 80+x,0+y,110+x,y+54,0,i*108,60,(i*108)+108,null);
+
+
             if(kier == 0){
                 g.drawImage(run.getImage(), 80+x,0+y,110+x,y+54,0,i*108,60,(i*108)+108,null);
             }
@@ -113,7 +126,7 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
             }*/
         }
 
-            //sprawdzanie czy jest pogloga na dole
+        //sprawdzanie czy jest pogloga na dole
         /*while(game.strt == false) {
             if (plansza[k + 32] == 0) {
                 for (int k = 1; k <= 10; k++) {
@@ -129,7 +142,6 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
                 e.printStackTrace();
             }
         }*/
-
     }
 
     @Override
@@ -195,7 +207,7 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
     @Override
     public void keyReleased(KeyEvent e) {
         //jump
-        if(e.getKeyCode()==38) {
+        /*if(e.getKeyCode()==38) {
             for (int k = 1; k <= 10; k++) {
                 y += 3;
                 kier = 2;
@@ -205,12 +217,12 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
             kier = 0;
         }
         repaint();
-        System.out.println(plansza[k]);
+        System.out.println(plansza[k]);*/
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        System.out.println(e.getPoint());
+        //System.out.println(e.getPoint());
 
         if (e.getX() >= 575 && e.getX() <= 705  && e.getY() >= 355 && e.getY() <= 415 ) {
             game.strt = false;
@@ -220,9 +232,6 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
         if (e.getX() >= 945 && e.getX() <= 1210 && e.getY() >= 25 && e.getY() <= 58) {
             game.Bsettings = true;
             System.out.println("settings");
-            game.fx = 0;
-            game.fy = 645;
-            game.fk = 674;
         }
     }
 

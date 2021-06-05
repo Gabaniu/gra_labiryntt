@@ -20,6 +20,10 @@ public class game {
 
     public boolean Blvl1;
     public boolean Blvl2;
+    public boolean Blvl3;
+    public boolean Blvl4;
+    public boolean Blvl5;
+    public boolean Blvl6;
 
     public boolean basic;
     public boolean select1A;
@@ -43,6 +47,7 @@ public class game {
     public boolean xy = false;
 
     public int s = 0;
+    int p = 1;
 
     public int fx = 0;
     public int fy = 0;
@@ -63,6 +68,10 @@ public class game {
 
         lvl1 l1 = new lvl1(this);
         lvl2 l2 = new lvl2(this);
+        /*lvl3 l3 = new lvl3(this);
+        lvl4 l4 = new lvl4(this);
+        lvl5 l5 = new lvl5(this);
+        lvl6 l6 = new lvl6(this);*/
 
         okno = new JFrame();
 
@@ -97,6 +106,11 @@ public class game {
 
 
         okno.addKeyListener(l1);
+        okno.addKeyListener(l2);
+        /*okno.addKeyListener(l3);
+        okno.addKeyListener(l4);
+        okno.addKeyListener(l5);
+        okno.addKeyListener(l6);*/
 
         okno.pack();
         okno.setTitle("Maze Runner");
