@@ -24,6 +24,12 @@ public class game {
     public boolean Blvl4;
     public boolean Blvl5;
     public boolean Blvl6;
+    public boolean Blvl7;
+    public boolean Blvl8;
+    public boolean Blvl9;
+
+    public boolean congrats;
+    public boolean over;
 
     public boolean basic;
     public boolean select1A;
@@ -71,7 +77,13 @@ public class game {
         /*lvl3 l3 = new lvl3(this);
         lvl4 l4 = new lvl4(this);
         lvl5 l5 = new lvl5(this);
-        lvl6 l6 = new lvl6(this);*/
+        lvl6 l6 = new lvl6(this);
+        lvl7 l7 = new lvl7(this);
+        lvl8 l8 = new lvl8(this);
+        lvl9 l9 = new lvl9(this);*/
+
+        congrats cn = new congrats(this);
+        over ov = new over(this);
 
         okno = new JFrame();
 
@@ -91,6 +103,13 @@ public class game {
 
         okno.add(l1);
         okno.add(l2);
+        /*okno.add(l3);
+        okno.add(l4);
+        okno.add(l5);
+        okno.add(l6);
+        okno.add(l7);
+        okno.add(l8);
+        okno.add(l9);*/
 
         //okno.add(mv);
 
@@ -103,6 +122,15 @@ public class game {
         okno.getContentPane().getComponent(6).setVisible(false);
         okno.getContentPane().getComponent(7).setVisible(false);
         okno.getContentPane().getComponent(8).setVisible(false);
+        /*okno.getContentPane().getComponent(9).setVisible(false);
+        okno.getContentPane().getComponent(10).setVisible(false);
+        okno.getContentPane().getComponent(11).setVisible(false);
+        okno.getContentPane().getComponent(12).setVisible(false);
+        okno.getContentPane().getComponent(13).setVisible(false);
+        okno.getContentPane().getComponent(14).setVisible(false);
+        okno.getContentPane().getComponent(15).setVisible(false);
+        okno.getContentPane().getComponent(16).setVisible(false);
+        okno.getContentPane().getComponent(17).setVisible(false);*/
 
 
         okno.addKeyListener(l1);
@@ -110,7 +138,11 @@ public class game {
         /*okno.addKeyListener(l3);
         okno.addKeyListener(l4);
         okno.addKeyListener(l5);
-        okno.addKeyListener(l6);*/
+        okno.addKeyListener(l6);
+        okno.addKeyListener(l7);
+        okno.addKeyListener(l8);
+        okno.addKeyListener(l9);*/
+
 
         okno.pack();
         okno.setTitle("Maze Runner");

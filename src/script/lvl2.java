@@ -19,6 +19,7 @@ public class lvl2 extends JPanel implements KeyListener, MouseListener {
     //public JLabel jl = new JLabel();
 
     boolean jumpp = false;
+    boolean jmove = false;
 
 
 
@@ -35,7 +36,15 @@ public class lvl2 extends JPanel implements KeyListener, MouseListener {
         jl.setForeground(Color.black);
         jl.setVisible(true);*/
 
+        if(plansza[k] == 4){
+            game.congrats = true;
+            game.Blvl2 = false;
+        }
 
+        if(plansza[k] == 3){
+            game.over = true;
+            game.Blvl2 = false;
+        }
 
     }
 
@@ -70,20 +79,20 @@ public class lvl2 extends JPanel implements KeyListener, MouseListener {
     };
 
 
-    /*public void Main(){
+    public void Main(){
         if(game.xy == true){
             x =0;
             y = 645;
             k = 674;
         }
 
-    }*/
+    }
 
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        //Main();
+        Main();
 
         ImageIcon im1 = new ImageIcon("src/png/2lvl.png");
         ImageIcon sett = new ImageIcon("src/png/sett.png");
@@ -91,22 +100,62 @@ public class lvl2 extends JPanel implements KeyListener, MouseListener {
         g.drawImage(im1.getImage(),0,0,1280,760,null);
         g.drawImage(sett.getImage(),950,-15,260,100,null);
 
+
+
         if(game.p == 1) {
             ImageIcon run = new ImageIcon("src/png/newtv6.png");
             ImageIcon jump = new ImageIcon("src/png/n-jump.png");
 
-            if(kier == 0) {
+            //g.drawImage(run.getImage(), 80+x,0+y,110+x,y+54,0,i*108,60,(i*108)+108,null);
+
+
+            if(kier == 0){
                 g.drawImage(run.getImage(), 80+x,0+y,110+x,y+54,0,i*108,60,(i*108)+108,null);
             }
             if(kier == 1) {
                 g.drawImage(run.getImage(), 110 + x, 0+y, 80 + x, y+54, 0,i*108,60,(i*108)+108, null);
             }
-            if(kier==2) {
+            if(kier==2){
                 g.drawImage(jump.getImage(), 80 + x, 0+y, 110 + x, y+54, 0,i*108,60,(i*108)+108, null);
             }
         }
         if(game.p == 2) {
             ImageIcon run = new ImageIcon("src/png/thomas.png");
+
+            //g.drawImage(run.getImage(), 80+x,0+y,110+x,y+54,0,i*108,60,(i*108)+108,null);
+
+
+            if(kier == 0){
+                g.drawImage(run.getImage(), 80+x,0+y,110+x,y+54,0,i*108,60,(i*108)+108,null);
+            }
+            if(kier == 1) {
+                g.drawImage(run.getImage(), 110 + x, 0+y, 80 + x, y+54, 0,i*108,60,(i*108)+108, null);
+            }
+            /*if(kier==2){
+                g.drawImage(jump.getImage(), 80 + x, 0+y, 110 + x, y+54, 0,i*108,60,(i*108)+108, null);
+            }*/
+        }
+        if(game.p == 3) {
+            ImageIcon run = new ImageIcon("src/png/minho.png");
+
+            //g.drawImage(run.getImage(), 80+x,0+y,110+x,y+54,0,i*108,60,(i*108)+108,null);
+
+
+            if(kier == 0){
+                g.drawImage(run.getImage(), 80+x,0+y,110+x,y+54,0,i*108,60,(i*108)+108,null);
+            }
+            if(kier == 1) {
+                g.drawImage(run.getImage(), 110 + x, 0+y, 80 + x, y+54, 0,i*108,60,(i*108)+108, null);
+            }
+            /*if(kier==2){
+                g.drawImage(jump.getImage(), 80 + x, 0+y, 110 + x, y+54, 0,i*108,60,(i*108)+108, null);
+            }*/
+        }
+        if(game.p == 4) {
+            ImageIcon run = new ImageIcon("src/png/teresa.png");
+
+            //g.drawImage(run.getImage(), 80+x,0+y,110+x,y+54,0,i*108,60,(i*108)+108,null);
+
 
             if(kier == 0){
                 g.drawImage(run.getImage(), 80+x,0+y,110+x,y+54,0,i*108,60,(i*108)+108,null);
@@ -135,7 +184,6 @@ public class lvl2 extends JPanel implements KeyListener, MouseListener {
                 e.printStackTrace();
             }
         }*/
-
     }
 
     @Override
@@ -195,33 +243,78 @@ public class lvl2 extends JPanel implements KeyListener, MouseListener {
                 k-=32;
             }
         }
+        //r.jump
+        if(e.getKeyCode()==69 && jumpp == false && jmove == false) {
+            if(plansza[k-32] == 0) {
+                jmove = true;
+                for (int k = 1; k <= 10; k++) {
+                    y -= 4;
+                    x += 5;
+                    kier = 2;
+                }
+                if (x%40 == 0) {
+                    k++;
+                }
+                k -= 32;
+            }
+        }
+        //l.jump
+        if(e.getKeyCode()==81 && jumpp == false && jmove == false) {
+            if(plansza[k-32] == 0) {
+                jmove = true;
+                for (int k = 1; k <= 10; k++) {
+                    y -= 4;
+                    x -= 5;
+                    kier = 2;
+                }
+                if (x%40 == 0) {
+                    k--;
+                }
+                k -= 32;
+            }
+        }
         repaint();
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        //jump
-        /*if(e.getKeyCode()==38) {
+        //r.jump
+        if(e.getKeyCode()==69 && jumpp == false && jmove == true) {
             for (int k = 1; k <= 10; k++) {
-                y += 3;
+                y += 4;
+                x += 5;
                 kier = 2;
             }
-            k+=32;
-            jumpp = false;
-            kier = 0;
+            if (x%40 == 0) {
+                k++;
+            }
+            k += 32;
+            jmove = false;
+        }
+        //l.jump
+        if(e.getKeyCode()==81 && jumpp == false && jmove == true) {
+            for (int k = 1; k <= 10; k++) {
+                y += 4;
+                x -= 5;
+                kier = 2;
+            }
+            if (x%40 == 0) {
+                k--;
+            }
+            k += 32;
+            jmove = false;
         }
         repaint();
-        System.out.println(plansza[k]);*/
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
         //System.out.println(e.getPoint());
 
-        /*if (e.getX() >= 575 && e.getX() <= 705  && e.getY() >= 355 && e.getY() <= 415 ) {
+        if (e.getX() >= 575 && e.getX() <= 705  && e.getY() >= 355 && e.getY() <= 415 ) {
             game.strt = false;
             System.out.println("start");
-        }*/
+        }
 
         if (e.getX() >= 945 && e.getX() <= 1210 && e.getY() >= 25 && e.getY() <= 58) {
             game.Bsettings = true;

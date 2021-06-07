@@ -1,6 +1,6 @@
 package script;
 
-public class watek extends Thread{
+public class watek extends Thread {
     public game game;
 
     public lvl1 l1;
@@ -65,21 +65,75 @@ public class watek extends Thread{
         if (game.Blvl2 == true) {
             game.okno.getContentPane().getComponent(8).setVisible(true);
         }
+        /*if (game.Blvl3 == false) {
+            game.okno.getContentPane().getComponent(9).setVisible(false);
+        }
+        if (game.Blvl3 == true) {
+            game.okno.getContentPane().getComponent(9).setVisible(true);
+        }
+        if (game.Blvl4 == false) {
+            game.okno.getContentPane().getComponent(10).setVisible(false);
+        }
+        if (game.Blvl4 == true) {
+            game.okno.getContentPane().getComponent(10).setVisible(true);
+        }
+        if (game.Blvl5 == false) {
+            game.okno.getContentPane().getComponent(11).setVisible(false);
+        }
+        if (game.Blvl5 == true) {
+            game.okno.getContentPane().getComponent(11).setVisible(true);
+        }
+        if (game.Blvl6 == false) {
+            game.okno.getContentPane().getComponent(12).setVisible(false);
+        }
+        if (game.Blvl6 == true) {
+            game.okno.getContentPane().getComponent(12).setVisible(true);
+        }
+        if (game.Blvl7 == false) {
+            game.okno.getContentPane().getComponent(13).setVisible(false);
+        }
+        if (game.Blvl7 == true) {
+            game.okno.getContentPane().getComponent(13).setVisible(true);
+        }
+        if (game.Blvl8 == false) {
+            game.okno.getContentPane().getComponent(14).setVisible(false);
+        }
+        if (game.Blvl8 == true) {
+            game.okno.getContentPane().getComponent(14).setVisible(true);
+        }
+        if (game.Blvl9 == false) {
+            game.okno.getContentPane().getComponent(15).setVisible(false);
+        }
+        if (game.Blvl9 == true) {
+            game.okno.getContentPane().getComponent(15).setVisible(true);
+        }
+        if (game.congrats == false) {
+            game.okno.getContentPane().getComponent(16).setVisible(false);
+        }
+        if (game.congrats == true) {
+            game.okno.getContentPane().getComponent(16).setVisible(true);
+        }
+        if (game.over == false) {
+            game.okno.getContentPane().getComponent(17).setVisible(false);
+        }
+        if (game.over == true) {
+            game.okno.getContentPane().getComponent(17).setVisible(true);
+        }*/
     }
 
 
-    public void run(){
+    public void run() {
 
         while (true) {
             windows();
 
             try {
-                Thread.sleep(20 );
+                Thread.sleep(20);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             //sprawdzanie czy jest pogloga na dole
-            if (game.strt == false && l1.jumpp == false && l1.jmove == false) {
+            /*if (game.strt == false && l1.jumpp == false && l1.jmove == false) {
                 if ((l1.plansza[l1.k + 32] == 0)) {
                     for (int k = 1; k <= 10; k++) {
                         l1.y += 4;
@@ -96,7 +150,7 @@ public class watek extends Thread{
                     e.printStackTrace();
                 }
 
-            }
+            }*/
         }
 
     }

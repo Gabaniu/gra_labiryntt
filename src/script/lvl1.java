@@ -72,11 +72,19 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
 
     public void Main(){
         if(game.xy == true){
-            x =0;
+            x = 0;
             y = 645;
             k = 674;
         }
 
+        if(plansza[k] == 4){
+            game.congrats = true;
+            game.Blvl1 = false;
+        }
+        if(plansza[k] == 3){
+            game.over = true;
+            game.Blvl1 = false;
+        }
     }
 
     @Override
