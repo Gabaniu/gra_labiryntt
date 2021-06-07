@@ -18,13 +18,19 @@ public class Settings extends JPanel implements MouseListener {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         ImageIcon im = new ImageIcon("src/png/settings.png");
-        ImageIcon im1 = new ImageIcon("src/png/1lvl.png");
         ImageIcon set = new ImageIcon("src/png/sett.png");
 
+        ImageIcon im1 = new ImageIcon("src/png/1lvl.png");
+        ImageIcon im2 = new ImageIcon("src/png/2lvl.png");
 
-        
-        if(game.Blvl1 == true){
+
+        if(game.s == 1){
             g.drawImage(im1.getImage(), 0, 0, 1280, 760, null);
+            g.drawImage(set.getImage(), 950, -15, 260, 100, null);
+
+        }
+        if(game.s == 2){
+            g.drawImage(im2.getImage(), 0, 0, 1280, 760, null);
             g.drawImage(set.getImage(), 950, -15, 260, 100, null);
 
         }
@@ -39,24 +45,26 @@ public class Settings extends JPanel implements MouseListener {
     public void mouseClicked(MouseEvent e) {
         System.out.println(e.getPoint());
         if (e.getX() >= 0 && e.getX() <= 950 && e.getY() >= 0 && e.getY() <= 129) {
+            game.strt = true;
             game.Bsettings = false;
-        }
+            }
         if (e.getX() >= 0 && e.getX() <= 329 && e.getY() >= 0 && e.getY() <= 760) {
+            game.strt = true;
             game.Bsettings = false;
         }
         if (e.getX() >= 0 && e.getX() <= 950 && e.getY() >= 611 && e.getY() <= 760) {
+            game.strt = true;
             game.Bsettings = false;
         }
         if (e.getX() >= 960 && e.getX() <= 1280 && e.getY() >= 0 && e.getY() <= 760) {
+            game.strt = true;
             game.Bsettings = false;
         }
 
         if (e.getX() >= 570 && e.getX() <= 680 && e.getY() >= 260 && e.getY() <= 270) {
             System.out.println("restart");
-            if(game.s == 1) {
-                game.strt = true;
-                game.Blvl1 = false;
-            }
+            game.strt = true;
+            game.Blvl1 = false;
             game.xy = true;
             game.Bsettings = false;
         }

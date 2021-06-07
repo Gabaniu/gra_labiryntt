@@ -21,21 +21,26 @@ public class timer extends JPanel {
         jl.setFont(new Font("Arial", Font.PLAIN, 30));
         jl.setForeground(Color.black);
         jl.setVisible(true);
+
+
+        //timer.start();
+
+        //add(jl);
     }
 
     public void start() {
 
         while(i < 300){
             j = String.valueOf(i);
-            jl.setText(j);
+            jl.setText("samolot");
             System.out.println(i);
             i++;
             repaint();
-            try {
+            /*try {
                 Thread.sleep(1000 );
             } catch (InterruptedException e) {
                 e.printStackTrace();
-            }
+            }*/
 
         }
     }

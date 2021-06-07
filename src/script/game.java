@@ -12,8 +12,6 @@ public class game {
     public boolean Bsplayer;
     public boolean Bsettings;
 
-    public boolean Bstrt;
-
     public boolean move;
 
     public boolean timer;
@@ -24,6 +22,9 @@ public class game {
     public boolean Blvl4;
     public boolean Blvl5;
     public boolean Blvl6;
+    public boolean Blvl7;
+    public boolean Blvl8;
+    public boolean Blvl9;
 
     public boolean basic;
     public boolean select1A;
@@ -68,10 +69,13 @@ public class game {
 
         lvl1 l1 = new lvl1(this);
         lvl2 l2 = new lvl2(this);
-        /*lvl3 l3 = new lvl3(this);
-        lvl4 l4 = new lvl4(this);
+        lvl3 l3 = new lvl3(this);
+        /*lvl4 l4 = new lvl4(this);
         lvl5 l5 = new lvl5(this);
-        lvl6 l6 = new lvl6(this);*/
+        lvl6 l6 = new lvl6(this);
+        lvl4 l7 = new lvl4(this);
+        lvl5 l8 = new lvl5(this);
+        lvl6 l9 = new lvl6(this);*/
 
         okno = new JFrame();
 
@@ -91,6 +95,13 @@ public class game {
 
         okno.add(l1);
         okno.add(l2);
+        okno.add(l3);
+        /*okno.add(l4);
+        okno.add(l5);
+        okno.add(l6);
+        okno.add(l7);
+        okno.add(l8);
+        okno.add(l9);*/
 
         //okno.add(mv);
 
@@ -103,14 +114,35 @@ public class game {
         okno.getContentPane().getComponent(6).setVisible(false);
         okno.getContentPane().getComponent(7).setVisible(false);
         okno.getContentPane().getComponent(8).setVisible(false);
+        /*okno.getContentPane().getComponent(9).setVisible(false);
+        okno.getContentPane().getComponent(10).setVisible(false);
+        okno.getContentPane().getComponent(11).setVisible(false);
+        okno.getContentPane().getComponent(12).setVisible(false);
+        okno.getContentPane().getComponent(13).setVisible(false);
+        okno.getContentPane().getComponent(14).setVisible(false);
+        okno.getContentPane().getComponent(15).setVisible(false);*/
 
 
         okno.addKeyListener(l1);
         okno.addKeyListener(l2);
-        /*okno.addKeyListener(l3);
-        okno.addKeyListener(l4);
+        okno.addKeyListener(l3);
+        /*okno.addKeyListener(l4);
         okno.addKeyListener(l5);
-        okno.addKeyListener(l6);*/
+        okno.addKeyListener(l6);
+        okno.addKeyListener(l7);
+        okno.addKeyListener(l8);
+        okno.addKeyListener(l9);*/
+
+
+        okno.addMouseListener(l1);
+        okno.addMouseListener(l2);
+        okno.addMouseListener(l3);
+        /*okno.addMouseListener(l4);
+        okno.addMouseListener(l5);
+        okno.addMouseListener(l6);
+        okno.addMouseListener(l7);
+        okno.addMouseListener(l8);
+        okno.addMouseListener(l9);*/
 
         okno.pack();
         okno.setTitle("Maze Runner");
@@ -120,22 +152,15 @@ public class game {
         okno.setResizable(false);
 
         this.Bstart = true;
-        this.Bhow = false;
-        this.Bselect = false;
-        this.Bsplayer = false;
-
-        this.Bsettings = false;
-        this.Bstrt = false;
-
-        this.Blvl1 = false;
-        this.Blvl2 = false;
 
         okno.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         okno.setVisible(true);
 
-        watek watek = new watek(this);
+        watek watek = new watek(this, l1);
         watek.start();
 
+        watek2 watek2 = new watek2(this, l1);
+        watek2.start();
 
     }
 

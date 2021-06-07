@@ -48,24 +48,47 @@ public class Select_Level extends JPanel implements MouseListener {
         }
         if (e.getX() >= 875 && e.getX() <= 977 && e.getY() >= 239 && e.getY() <= 341) {
             System.out.println("3_level");
+            game.strt = true;
+            game.s = 3;
+            //game.timer = true;
+            //game.win = false;
+            game.Bselect = false;
         }
         if (e.getX() >= 280 && e.getX() <= 385 && e.getY() >= 398 && e.getY() <= 500) {
             System.out.println("4_level");
+            game.strt = true;
+            game.s = 4;
+            game.Bselect = false;
         }
         if (e.getX() >= 573 && e.getX() <= 687 && e.getY() >= 400 && e.getY() <= 500) {
             System.out.println("5_level");
+            game.strt = true;
+            game.s = 5;
+            game.Bselect = false;
         }
         if (e.getX() >= 875 && e.getX() <= 975 && e.getY() >= 400 && e.getY() <= 500) {
             System.out.println("6_level");
+            game.strt = true;
+            game.s = 6;
+            game.Bselect = false;
         }
         if (e.getX() >= 282 && e.getX() <= 386 && e.getY() >= 556 && e.getY() <= 658) {
             System.out.println("7_level");
+            game.strt = true;
+            game.s = 7;
+            game.Bselect = false;
         }
         if (e.getX() >= 572 && e.getX() <= 687 && e.getY() >= 556 && e.getY() <= 657) {
             System.out.println("8_level");
+            game.strt = true;
+            game.s = 8;
+            game.Bselect = false;
         }
         if (e.getX() >= 876 && e.getX() <= 977 && e.getY() >= 555 && e.getY() <= 658) {
             System.out.println("9_level");
+            game.strt = true;
+            game.s = 9;
+            game.Bselect = false;
         }
     }
 
