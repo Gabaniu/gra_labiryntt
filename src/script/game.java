@@ -133,7 +133,7 @@ public class game {
         okno.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         okno.setVisible(true);
 
-        watek watek = new watek(this);
+        watek watek = new watek(this, l1);
         watek.start();
 
 
