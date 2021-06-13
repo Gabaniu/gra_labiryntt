@@ -80,6 +80,9 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
         if(plansza[k] == 4){
             game.congrats = true;
             game.Blvl1 = false;
+            y = 645;
+            x = 0;
+            k = 674;
         }
         if(plansza[k] == 3){
             game.over = true;
@@ -193,6 +196,17 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
 
                 //System.out.println("0");
             }
+            if(plansza[k+1] == 4){
+                for(int f = 0; f<1; f++){
+                    x+=5;
+                    kier=0;
+                    if(x%40 == 0){
+                        k++;
+                    }
+                }
+
+                //System.out.println("0");
+            }
             if(plansza[k+1] == 1){
                 System.out.println("1");
             }
@@ -201,6 +215,16 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
         //left
         if(e.getKeyCode()==37) {
             if(plansza[k-1] == 0){
+                for(int f = 0; f<1; f++) {
+                    x-=5;
+                    kier=1;
+                    if(x%40 == 0){
+                        k--;
+                    }
+                }
+                //System.out.println("0");
+            }
+            if(plansza[k-1] == 4){
                 for(int f = 0; f<1; f++) {
                     x-=5;
                     kier=1;
@@ -219,7 +243,7 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
         if(e.getKeyCode()==38 && jumpp == false) {
             if(plansza[k-32] == 0) {
                 jumpp = true;
-                for (int k = 1; k <= 10; k++) {
+                for (int k = 1; k <= 8; k++) {
                     y -= 4;
                     kier = 2;
                 }
@@ -227,8 +251,20 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
                 jumpp = false;
             }
         }
+        //down
+        if(e.getKeyCode()==40 && jumpp == false) {
+            if(plansza[k+32] == 0) {
+                jumpp = true;
+                for (int k = 1; k <= 8; k++) {
+                    y += 4;
+                    kier = 2;
+                }
+                k+=32;
+                jumpp = false;
+            }
+        }
         //r.jump
-        if(e.getKeyCode()==69 && jumpp == false && jmove == false) {
+        /*if(e.getKeyCode()==69 && jumpp == false && jmove == false) {
             if(plansza[k-32] == 0) {
                 jmove = true;
                 for (int k = 1; k <= 10; k++) {
@@ -257,14 +293,14 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
                 }
                 k -= 32;
             }
-        }
+        }*/
         repaint();
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
         //r.jump
-        if(e.getKeyCode()==69 && jumpp == false && jmove == true) {
+        /*if(e.getKeyCode()==69 && jumpp == false && jmove == true) {
             for (int k = 1; k <= 10; k++) {
                 y += 4;
                 x += 5;
@@ -288,7 +324,7 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
             }
             k += 32;
             jmove = false;
-        }
+        }*/
         repaint();
     }
 

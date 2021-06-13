@@ -1,6 +1,7 @@
 package script;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -14,6 +15,15 @@ public class over extends JPanel implements MouseListener {
         setBounds(0, 0, 1280, 760);
         addMouseListener(this);
     }
+
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        ImageIcon im1 = new ImageIcon("src/png/game_over.png");
+        g.drawImage(im1.getImage(),0,0,1280,760,null);
+    }
+
 
     @Override
     public void mouseClicked(MouseEvent e) {

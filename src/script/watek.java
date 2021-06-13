@@ -106,19 +106,19 @@ public class watek extends Thread {
         }
         if (game.Blvl9 == true) {
             game.okno.getContentPane().getComponent(15).setVisible(true);
-        }
+        }*/
         if (game.congrats == false) {
-            game.okno.getContentPane().getComponent(16).setVisible(false);
+            game.okno.getContentPane().getComponent(9).setVisible(false);
         }
         if (game.congrats == true) {
-            game.okno.getContentPane().getComponent(16).setVisible(true);
+            game.okno.getContentPane().getComponent(9).setVisible(true);
         }
         if (game.over == false) {
-            game.okno.getContentPane().getComponent(17).setVisible(false);
+            game.okno.getContentPane().getComponent(10).setVisible(false);
         }
         if (game.over == true) {
-            game.okno.getContentPane().getComponent(17).setVisible(true);
-        }*/
+            game.okno.getContentPane().getComponent(10).setVisible(true);
+        }
     }
 
     public void podloga(){

@@ -111,6 +111,9 @@ public class game {
         okno.add(l8);
         okno.add(l9);*/
 
+        okno.add(cn);
+        okno.add(ov);
+
         //okno.add(mv);
 
         okno.getContentPane().getComponent(0).setVisible(true);
@@ -128,9 +131,9 @@ public class game {
         okno.getContentPane().getComponent(12).setVisible(false);
         okno.getContentPane().getComponent(13).setVisible(false);
         okno.getContentPane().getComponent(14).setVisible(false);
-        okno.getContentPane().getComponent(15).setVisible(false);
-        okno.getContentPane().getComponent(16).setVisible(false);
-        okno.getContentPane().getComponent(17).setVisible(false);*/
+        okno.getContentPane().getComponent(15).setVisible(false);*/
+        okno.getContentPane().getComponent(9).setVisible(false);
+        okno.getContentPane().getComponent(10).setVisible(false);
 
 
         okno.addKeyListener(l1);
