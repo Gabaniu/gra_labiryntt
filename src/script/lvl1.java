@@ -166,23 +166,7 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
                 g.drawImage(jump.getImage(), 80 + x, 0+y, 110 + x, y+54, 0,i*108,60,(i*108)+108, null);
             }*/
         }
-
-        //sprawdzanie czy jest pogloga na dole
-        /*while(game.strt == false) {
-            if (plansza[k + 32] == 0) {
-                for (int k = 1; k <= 10; k++) {
-                    y += 3;
-                    kier = 2;
-                }
-                k+=32;
-                jumpp = false;
-            }
-            try {
-                Thread.sleep(20);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }*/
+        repaint();
     }
 
     @Override
@@ -236,10 +220,11 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
             if(plansza[k-32] == 0) {
                 jumpp = true;
                 for (int k = 1; k <= 10; k++) {
-                    y -= 3;
+                    y -= 4;
                     kier = 2;
                 }
                 k-=32;
+                jumpp = false;
             }
         }
         //r.jump
@@ -255,6 +240,7 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
                     k++;
                 }
                 k -= 32;
+                jmove = false;
             }
         }
         //l.jump
@@ -288,7 +274,7 @@ public class lvl1 extends JPanel implements KeyListener, MouseListener {
                 k++;
             }
             k += 32;
-            jmove = false;
+            //jmove = false;
         }
         //l.jump
         if(e.getKeyCode()==81 && jumpp == false && jmove == true) {

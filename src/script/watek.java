@@ -121,28 +121,18 @@ public class watek extends Thread {
         }*/
     }
 
-
-    public void run() {
-
-        while (true) {
-            windows();
-
-            try {
-                Thread.sleep(20);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            //sprawdzanie czy jest pogloga na dole
-            /*if (game.strt == false && l1.jumpp == false && l1.jmove == false) {
+    public void podloga(){
+        //sprawdzanie czy jest pogloga na dole
+            /*if (game.strt == false /*&& l1.jumpp == false && l1.jmove == false) {
                 if ((l1.plansza[l1.k + 32] == 0)) {
                     for (int k = 1; k <= 10; k++) {
                         l1.y += 4;
                         l1.kier = 2;
                     }
                     l1.k += 32;
-
+                    l1.repaint();
                 }
-                l1.repaint();
+
 
                 try {
                     Thread.sleep(20);
@@ -151,6 +141,35 @@ public class watek extends Thread {
                 }
 
             }*/
+    }
+    public void bok(){
+        /*if (game.strt == false && ) {
+                if ((l1.plansza[l1.k + 1] == 0)) {
+
+                }
+
+
+                try {
+                    Thread.sleep(20);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+            }*/
+    }
+
+    public void run() {
+
+        while (true) {
+            windows();
+            podloga();
+
+            try {
+                Thread.sleep(20);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
         }
 
     }

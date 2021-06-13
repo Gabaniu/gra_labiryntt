@@ -81,7 +81,7 @@ public class Strt extends JPanel implements MouseListener {
     public void mousePressed(MouseEvent e) {
         System.out.println(e.getPoint());
 
-        if (e.getX() >= 575 && e.getX() <= 705  && e.getY() >= 355 && e.getY() <= 415 && game.s == 1) {
+        if (e.getX() >= 575 && e.getX() <= 705  && e.getY() >= 355 && e.getY() <= 415) {
             if(game.s == 1){
                 game.Blvl1 = true;
                 game.strt = false;
@@ -127,7 +127,6 @@ public class Strt extends JPanel implements MouseListener {
                 game.strt = false;
                 System.out.println("9");
             }
-
             System.out.println("start");
         }
         if (e.getX() >= 945 && e.getX() <= 1210 && e.getY() >= 25 && e.getY() <= 58) {
